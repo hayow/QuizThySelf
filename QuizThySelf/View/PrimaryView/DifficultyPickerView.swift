@@ -35,42 +35,50 @@ struct DifficultyPickerView: View {
                         HStack {
                             Spacer()
                             Text(difficulty.rawValue.capitalized)
+                                .font(difficulties.contains(difficulty) ? Font.title2: Font.title3)
+                                .fontWeight(difficulties.contains(difficulty) ? Font.Weight.bold: Font.Weight.medium)
                                 .fontDesign(Font.Design.rounded)
                             Spacer()
                         }
                     }
+                    .buttonStyle(BorderedSelectableButtonStyle(color: Color.indigo, isSelected: difficulties.contains(difficulty), geometry: geometry))
+                }
+            }
+            .padding()
+            
+            
+            if difficulties.isEmpty {
+                VStack {
+                    Text("Select at least one difficulty to continue")
+                        .fontWeight(Font.Weight.light)
+                        .fontDesign(Font.Design.rounded)
+                        .foregroundColor(Color.secondary)
+                    Button {
+                        
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text("Next")
+                            Spacer()
+                        }
+                    }
                     .buttonStyle(BorderedProminentButtonStyle())
+                    .disabled(true)
                 }
-            }
-            .padding()
-            
-            
-            Button {
-                
-            } label: {
-                HStack {
-                    Spacer()
-                    Text("Next")
-                    Spacer()
+                .padding()
+            } else {
+                Button {
+                    
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text("Next")
+                        Spacer()
+                    }
                 }
+                .buttonStyle(BorderedProminentButtonStyle())
+                .padding()
             }
-            .buttonStyle(BorderedProminentButtonStyle())
-            .padding()
-            
-            Button {
-                router.popToRoot()
-            } label: {
-                HStack {
-                    Spacer()
-                    Text("Back to home")
-                    Spacer()
-                }
-            }
-            .buttonStyle(BorderedProminentButtonStyle())
-            .padding()
-            
-            Text("Categories: \(categories.description)")
-            Text("Difficulties: \(difficulties.description)")
             
             Spacer()
         }

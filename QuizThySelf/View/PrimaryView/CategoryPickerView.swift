@@ -31,28 +31,50 @@ struct CategoryPickerView: View {
                         HStack {
                             Spacer()
                             Text(category.rawValue.capitalized)
+                                .font(categories.contains(category) ? Font.title2: Font.title3)
+                                .fontWeight(categories.contains(category) ? Font.Weight.bold: Font.Weight.medium)
                                 .fontDesign(Font.Design.rounded)
                             Spacer()
                         }
                     }
+                    .buttonStyle(BorderedSelectableButtonStyle(color: Color.indigo, isSelected: categories.contains(category), geometry: geometry))
+                }
+            }
+            .padding()
+            
+            
+            if categories.isEmpty {
+                VStack {
+                    Text("Select at least one category to continue")
+                        .fontWeight(Font.Weight.light)
+                        .fontDesign(Font.Design.rounded)
+                        .foregroundColor(Color.secondary)
+                    Button {
+                        router.push(Router.Path.difficultyPickerView(categories))
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text("Next")
+                            Spacer()
+                        }
+                    }
                     .buttonStyle(BorderedProminentButtonStyle())
+                    .disabled(true)
                 }
-            }
-            .padding()
-            
-            Text("Categories: \(categories.description)")
-            
-            Button {
-                router.push(Router.Path.difficultyPickerView(categories))
-            } label: {
-                HStack {
-                    Spacer()
-                    Text("Next")
-                    Spacer()
+                .padding()
+            } else {
+                Button {
+                    router.push(Router.Path.difficultyPickerView(categories))
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text("Next")
+                        Spacer()
+                    }
                 }
+                .buttonStyle(BorderedProminentButtonStyle())
+                .padding()
             }
-            .buttonStyle(BorderedProminentButtonStyle())
-            .padding()
 
             
 
@@ -66,6 +88,8 @@ struct CategoryPickerView: View {
                 DifficultyPickerView(router: router, categories: categories, geometry: geometry)
             }
         }
+        
+        
     }
 }
 

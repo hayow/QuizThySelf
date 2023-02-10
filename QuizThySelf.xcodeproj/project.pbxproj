@@ -24,6 +24,7 @@
 		1F833A9A2995560D006A060B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F833A992995560D006A060B /* Router.swift */; };
 		1F833A9D29955681006A060B /* Router+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F833A9C29955681006A060B /* Router+Path.swift */; };
 		1F833A9F299557DD006A060B /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F833A9E299557DD006A060B /* QuizViewModel.swift */; };
+		1F833AA32996A8C1006A060B /* BorderedSelectableButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F833AA22996A8C1006A060B /* BorderedSelectableButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		1F833A992995560D006A060B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1F833A9C29955681006A060B /* Router+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Path.swift"; sourceTree = "<group>"; };
 		1F833A9E299557DD006A060B /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		1F833AA22996A8C1006A060B /* BorderedSelectableButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedSelectableButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		1F833A972995524E006A060B /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				1F833AA22996A8C1006A060B /* BorderedSelectableButtonStyle.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				1F833A902993FFA0006A060B /* WelcomeView.swift in Sources */,
 				1F833A6829902775006A060B /* QuizThySelfApp.swift in Sources */,
 				1F833A7C299028CB006A060B /* Quiz+Question.swift in Sources */,
+				1F833AA32996A8C1006A060B /* BorderedSelectableButtonStyle.swift in Sources */,
 				1F833A8629914BEF006A060B /* Question+AnswerContentType.swift in Sources */,
 				1F833A7E299028F4006A060B /* Question+Answer.swift in Sources */,
 				1F833A942994012B006A060B /* CategoryPickerView.swift in Sources */,
